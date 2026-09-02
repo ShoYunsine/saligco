@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salig Construction and Co. | General Contractors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="assets/svgs/logo.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <!-- Pointing to the SVG inside assets/svgs/ -->
+            <a href="#" class="logo-link">
+                <img src="assets/svgs/logo.svg" alt="Construction Company Logo" class="logo-img">
+            </a>
+
+            <div class="nav-right">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li>
+                        <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook" class="social-link">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-contact-item">
+                        <a href="#contact" class="btn btn-primary nav-btn">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="video-hero-about">
+        <div class="sticky-video">
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="assets/videos/herobg.mp4" type="video/mp4">
+                <source src="assets/videos/hero-background.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <section class="hero">
+            <div class="hero-inner">
+            <div class="hero-content">
+                <h1><span class="brand-accent">Trust</span> <span class="hero-small-word">is</span> <span class="brand-accent">Built</span>, <span class="hero-small-word">not</span> <span class="brand-accent">Given</span>.</h1>
+                <p>Commercial & Residential General Contracting Services.</p>
+
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn btn-primary hero-cta">
+                        <span class="cta-text">I am a Client</span>
+                        <span class="cta-arrow" aria-hidden="true">
+                            <img src="assets/svgs/arrow.svg" alt="">
+                        </span>
+                    </a>
+
+                    <a href="#contact" class="btn btn-primary hero-cta">
+                        <span class="cta-text">I’m an Investor</span>
+                        <span class="cta-arrow" aria-hidden="true">
+                            <img src="assets/svgs/arrow.svg" alt="">
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <aside class="hero-updates" aria-label="Company updates">
+                <div class="update-media">
+                    <img class="update-image" src="assets/png/1.png" alt="Construction site at sunset">
+                </div>
+                <div class="update-copy">
+                    <span class="update-kicker">Field notes / 01</span>
+                    <h2 class="update-title">Building the groundwork for what comes next.</h2>
+                    <p class="update-description">A closer look at the people, places, and progress behind every Salig project.</p>
+                </div>
+                <div class="update-controls">
+                    <span class="update-count"><strong class="update-current">01</strong> / <span class="update-total">03</span></span>
+                    <button class="update-arrow" type="button" aria-label="Next update">
+                        <svg class="update-progress" viewBox="0 0 48 48" aria-hidden="true">
+                            <circle class="update-progress-track" cx="24" cy="24" r="21"></circle>
+                            <circle class="update-progress-fill" cx="24" cy="24" r="21"></circle>
+                        </svg>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </aside>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="container">
+                
+                <div class="section-title">
+                    <img src="assets/svgs/logo2w.svg" alt="Salig Construction logo" class="about-logo">
+                    <h2>Who Are We?</h2>
+                    <p class="subtitle">A construction company based on the principle, <strong>"Trust is Built, not Given."</strong> Instead of just telling customers to trust their work, the company demonstrates its dedication in all aspects: by the <strong>plans</strong>, the <strong>inspections</strong>, the <strong>communications</strong>, and the <strong>work itself</strong>. The business offers <strong>construction</strong>, <strong>renovation</strong>, <strong>project management</strong>, and <strong>design services</strong> for residential, commercial, and community projects, including challenging, unconventional, and otherwise difficult-to-develop sites and complex infrastructure projects. Salig Construction & Co. doesn't want to just get projects done — it wants to <strong>build a better future</strong>, <strong>deliver long-lasting value</strong>, and <strong>forge community opportunities</strong> wherever possible.</p>
+                </div>
+
+                <div class="asymmetric-grid-wrap">
+                    <canvas class="about-grid-canvas" aria-hidden="true"></canvas>
+                    <div class="asymmetric-grid" id="core-values">
+                        <div id="mission" class="card card-wide card-highlight card-bg-1">
+                            <div class="card-bg-layer" aria-hidden="true"></div>
+                            <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <h3>Our Mission</h3>
+                            <p>
+                               Salig Construction & Co. is committed to provide quality workmanship and customer service while upholding the highest standards of professionalism, honesty, fairness, and integrity in all relationships with our clients and employees, to adapt a disciplined and consistent approach to every project regardless of its size and/or scale ensuring excellence and reliability in all aspects of our work, and to grow by continuously providing  valuable, significant, and impactful services and solutions, expanding into new areas that strengthens our expertise and align with customer’s needs.
+                            </p>
+                        </div>
+
+                        <div class="card value-box card-bg-2">
+                            <div class="card-bg-layer" aria-hidden="true"></div>
+                            <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h4>Integrity</h4>
+                            <p>Honesty, clear pricing, and unyielding ethical standards on every job site.</p>
+                        </div>
+
+                        <div class="card value-box card-bg-3">
+                            <div class="card-bg-layer" aria-hidden="true"></div>
+                            <div class="value-icon"><i class="fa-solid fa-award"></i></div>
+                            <h4>Excellence</h4>
+                            <p>Superior craftsmanship and attention to detail define everything we build.</p>
+                        </div>
+
+                        <div class="card value-box card-bg-4">
+                            <div class="card-bg-layer" aria-hidden="true"></div>
+                            <div class="value-icon"><i class="fa-solid fa-hard-hat"></i></div>
+                            <h4>Safety First</h4>
+                            <p>Zero-harm job sites, prioritizing our crew and clients without exception.</p>
+                        </div>
+
+                        <div class="card value-box card-bg-5">
+                            <div class="card-bg-layer" aria-hidden="true"></div>
+                            <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+                            <h4>Accountability</h4>
+                            <p>Full ownership of timelines, budgets, and deliverables from day one.</p>
+                        </div>
+
+                        <div id="vision" class="card card-wide card-highlight card-bg-6">
+                            <div class="card-bg-layer" aria-hidden="true"></div>
+                            <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                            <h3>Our Vision</h3>
+                            <p>To become a pioneer in the journey of construction and a leading innovator in creating livelihoods; building a future founded on trust, strengthened by quality, and sustained through infrastructure that improves lives and creates opportunities for generations to come. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="asymmetric-indicators" id="aboutIndicators">
+                    <button class="indicator-dot active" data-index="0" aria-label="Highlight Mission"><span class="progress-fill"></span></button>
+                    <button class="indicator-dot" data-index="1" aria-label="Highlight Integrity"><span class="progress-fill"></span></button>
+                    <button class="indicator-dot" data-index="2" aria-label="Highlight Excellence"><span class="progress-fill"></span></button>
+                    <button class="indicator-dot" data-index="3" aria-label="Highlight Safety First"><span class="progress-fill"></span></button>
+                    <button class="indicator-dot" data-index="4" aria-label="Highlight Accountability"><span class="progress-fill"></span></button>
+                    <button class="indicator-dot" data-index="5" aria-label="Highlight Vision"><span class="progress-fill"></span></button>
+                </div>
+
+                <div id="objectives" class="about-values-block">
+                    <div class="about-values-intro">
+                        <p>We believe in building with purpose, creating lasting impact, and shaping spaces that strengthen the communities around us.</p>
+                    </div>
+                    <ul class="about-values-list">
+                        <li>
+                            <span class="value-number">1.</span>
+                            <div class="value-copy">
+                                <h4>Innovate and Pioneer</h4>
+                                <p>Identify and adopt modern, profitable engineering techniques while ensuring that projects are effective, efficient, and sustainable.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="value-number">2.</span>
+                            <div class="value-copy">
+                                <h4>Synergize and Transcend</h4>
+                                <p>Harness our company’s collective expertise and strengths to develop solutions that surpass conventional standards and effectively address our client’s needs.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="value-number">3.</span>
+                            <div class="value-copy">
+                                <h4>Establish Excellence</h4>
+                                <p>Uphold excellence as the standard across our services and operations delivering quality projects, exceeding client expectations, and building a reputation that earns trust and attracts future opportunities.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="value-number">4.</span>
+                            <div class="value-copy">
+                                <h4>Progress with Purpose</h4>
+                                <p>Contribute to the well-being of the communities where we operate by pursuing economically sustainable projects that create lasting value for society, the environment, and future generations.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="grid grid-3">
+            <div class="card">
+                <h3>General Contracting</h3>
+                <p>End-to-end management for residential and commercial builds.</p>
+            </div>
+            <div class="card">
+                <h3>Renovations</h3>
+                <p>Full-scale structural transformations and modern upgrades.</p>
+            </div>
+            <div class="card">
+                <h3>Project Design</h3>
+                <p>Architectural planning, permits, and engineering support.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-light">
+        <h2>Featured Projects</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="residential">Residential</button>
+        </div>
+        <div class="grid grid-3 gallery">
+            <div class="project-card commercial">
+                <div class="placeholder-img">Commercial Office</div>
+                <h4>Downtown Plaza</h4>
+            </div>
+            <div class="project-card residential">
+                <div class="placeholder-img">Residential Home</div>
+                <h4>Modern Villa</h4>
+            </div>
+            <div class="project-card commercial">
+                <div class="placeholder-img">Industrial Facility</div>
+                <h4>Logistics Hub</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Request a Quote</h2>
+        <form id="quoteForm" class="contact-form">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <select id="serviceType" required>
+                <option value="">Select Service Needed</option>
+                <option value="commercial">Commercial</option>
+                <option value="residential">Residential</option>
+                <option value="renovation">Renovation</option>
+            </select>
+            <textarea id="message" rows="4" placeholder="Project details & timeline..." required></textarea>
+            <button type="submit" class="btn btn-primary">Send Request</button>
+        </form>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-main">
+                <div class="footer-brand-block">
+                    <a href="#" class="footer-logo" aria-label="Salig Construction and Co. home">
+                        <img src="assets/svgs/logo2w.svg" alt="Salig Construction and Co. logo">
+                    </a>
+                </div>
+
+                <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h4>People</h4>
+                        <ul>
+                            <li><a href="#">People</a></li>
+                            <li><a href="#">Vision, Values &amp; Commitments</a></li>
+                            <li><a href="#">Leadership</a></li>
+                            <li><a href="#">Salig.org</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Projects</h4>
+                        <ul>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">View More Projects</a></li>
+                            <li><a href="#">Markets</a></li>
+                            <li><a href="#">Regions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Approach</h4>
+                        <ul>
+                            <li><a href="#">Approach</a></li>
+                            <li><a href="#">Safety</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Ethics</a></li>
+                            <li><a href="#">More</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Careers</h4>
+                        <ul>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Why Salig</a></li>
+                            <li><a href="#">Career Opportunities</a></li>
+                            <li><a href="#">Life at Salig</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">Who Are We?</a></li>
+                            <li><a href="#mission">Mission, Vision, and Core Values</a></li>
+                        </ul>
+                        <ul class="footer-subgroup">
+                            <li><a href="#objectives">Objectives</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-meta">
+                <div class="footer-contact">
+                    <a href="#" class="footer-home-link">Salig Construction &amp; Co.</a>
+                    <a href="tel:+15713926300">+1 571-392-6300</a>
+                    <a href="mailto:webmas@bechtel.com">webmas@bechtel.com</a>
+                </div>
+
+                <div class="footer-legal">
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Australia Privacy Policy</a></li>
+                        <li><a href="#">Modern Slavery Act Statement</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Ethics</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-socials" aria-label="Social media links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-line">
+                <span>© 2026 Salig Construction &amp; Co.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
