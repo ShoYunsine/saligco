@@ -893,7 +893,6 @@ text-align: justify;
 /* Card Styling */
 .card {
   position: relative;
-  z-index: 1;
   background: var(--color-white);
   padding: 2rem;
   border: 1px solid transparent;
@@ -910,7 +909,6 @@ text-align: justify;
 
 .card > *:not(.card-bg-layer) {
   position: relative;
-  z-index: 2;
 }
 
 .card-bg-layer {
@@ -921,7 +919,6 @@ text-align: justify;
   opacity: 0;
   transform: scale(1.05);
   transition: opacity 0.35s ease, transform 0.35s ease;
-  z-index: 1;
 }
 
 .card:hover .card-bg-layer,

@@ -1,0 +1,23 @@
+[
+  {
+    "image": "assets/png/1.png",
+    "alt": "Construction site at sunset",
+    "kicker": "Field notes / 01",
+    "title": "Building the groundwork for what comes next.",
+    "description": "A closer look at the people, places, and progress behind every Salig project."
+  },
+  {
+    "image": "assets/png/6.png",
+    "alt": "Salig construction project",
+    "kicker": "Project watch / 02",
+    "title": "Progress measured in strong foundations.",
+    "description": "From first inspection to final handover, every detail moves the work forward."
+  },
+  {
+    "image": "assets/png/1.png",
+    "alt": "Construction site at sunset",
+    "kicker": "Company journal / 03",
+    "title": "Trust is the most important thing we build.",
+    "description": "Meet the standards, conversations, and commitments that shape our way of working."
+  }
+]
