@@ -321,7 +321,6 @@ body { line-height: 1.6; color: #333; background: #111; overflow-x: hidden;}
   text-align: center;
   overflow: hidden;
   padding: 0 20%;
-  z-index: 2;
   margin-top: 0;
 }
 .hero-inner {
