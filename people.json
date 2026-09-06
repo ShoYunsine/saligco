@@ -25,23 +25,28 @@
             "type": "department",
             "children": [
                 {
-                    "name": "Arimado",
-                    "role": "Chief Financial Officer (CFO) / Logistics and Budget Officer",
-                    "rank": "Finance & Logistics",
-                    "type": "person",
-                    "image": "assets/png/personnel/placeholder.png",
-                    "bio": "Leads procurement, logistics, budget planning, and financial support for company operations.",
-                    "credentials": [
-                        "Profession: Certified Public Accountant and Civil Engineer",
-                        "B.S. Business Administration and Accountancy, UP Diliman",
-                        "B.S. Civil Engineering, Bicol University",
-                        "PRC License Nos. 0098767 and 0098768",
-                        "8 years and 8 days of experience",
-                        "Expertise: Finance, logistics, budgeting, and procurement"
-                    ],
-                    "experience": [],
-                    "currentRole": "Chief Financial Officer / Logistics and Budget Officer: Manages financial planning, procurement, logistics, and resource allocation."
-                }
+  "name": "R, Arimado",
+  "role": "Chief Financial Officer / Logistics & Budget Officer",
+  "rank": "Administration & Finance",
+  "type": "person",
+  "image": "assets/png/personnel/placeholder.png",
+  "bio": "Oversees financial planning, budgeting, and resource allocation, integrating engineering cost analysis with accounting principles to maintain fiscal discipline and operational efficiency.",
+  "credentials": [
+    "Profession: Certified Public Accountant / Civil Engineer",
+    "B.S. Business Administration & Accountancy, UP Diliman",
+    "B.S. Civil Engineering, Bicol University",
+    "PRC License No. 0098768 (Certified Public Accountant)",
+    "PRC License No. 0096767 (Civil Engineer)",
+    "8 years of experience",
+    "Area of Expertise: Financial Planning, Budget Management, Accounting, Financial Reporting"
+  ],
+  "experience": [
+    "Financial Analyst — DPWH: Assisted in cost estimation and budget tracking for regional road development projects under DPWH supervision.",
+    "Accounting Associate: Managed project-based financial reporting and ensured compliance with PRC and government audit standards.",
+    "Junior Civil Engineer: Supported structural design reviews and coordinated material logistics for mid-scale construction projects."
+  ],
+  "currentRole": "Chief Financial Officer (CFO) / Logistics and Budget Officer — Salig Construction & Co.: Oversees financial planning, budgeting, and resource allocation while integrating engineering cost analysis with accounting principles across all construction projects."
+}
             ]
         },
         {
@@ -97,8 +102,8 @@
                             "children": [
                                 {
                                     "name": "JR, Aycocho",
-                                    "role": "Construction Management Team",
-                                    "rank": "Plumbing Services",
+                                    "role": "Plumbing Supervisor / Construction Management Team",
+                                    "rank": "Plumbing Supervisor / Master Plumber",
                                     "type": "person",
                                     "image": "assets/png/personnel/aycocho.png",
                                     "bio": "Part of the Construction Management Team at Salig Construction & Co., bringing 10 years of civil engineering and construction experience.",
@@ -110,11 +115,11 @@
                                         "Safety Training: Construction Occupational Safety and Health (COSH)",
                                         "Safety Officer 3 (SO3)",
                                         "10 years of experience",
-                                        "Expertise: Construction Management, Plumbing Supervision, Plumbing Systems, Building Utilities, Site Supervision, Project Coordination"
+                                        "Expertise: Construction Management, Plumbing Supervision and Engineering, Plumbing Systems, Building Utilities, Site Supervision, Project Coordination"
                                     ],
                                     "experience": [
                                         "Civil Engineer, Department of Public Works and Highways (DPWH), 2016-2021: Assisted with infrastructure supervision, site inspections, progress monitoring, technical documents, and coordination with contractors and inspectors.",
-                                        "Civil Engineer / Plumbing Supervisor, Salig Construction & Co., 2021-Present: Supervises plumbing installation, water supply, drainage, building utilities, site supervision, quality control, and coordination with architects and engineering disciplines."
+                                        "Civil Engineer / Plumbing Supervisor and Engineer, Salig Construction & Co., 2021-Present: Engineers plumbing systems, water supply, drainage, building utilities, site supervision, quality control, and coordination with architects and engineering disciplines."
                                     ],
                                     "currentRole": "Construction Management Team / Plumbing Supervisor / Civil Engineer / Master Plumber: Oversees plumbing and building utility works while assisting in site supervision, project coordination, quality control, and overall construction management."
                                 }
@@ -150,245 +155,247 @@
                         "Project Coordinator: Supported a municipal road and drainage improvement project."
                     ],
                     "currentRole": "Chief Operating Officer / Project Manager: Ensures projects uphold Salig's quality, integrity, and client trust from planning through completion.",
-                 "children": 
-                 [
-                    {
-                    "name": "SN, Toledo",
-                    "role": "Design Manager",
-                    "rank": "Architectural Design",
-                    "type": "person",
-                    "image": "assets/png/personnel/toledo.png",
-                    "bio": "Leads architectural design, design management, and project coordination.",
-                    "credentials": [
-                        "Profession: Architect",
-                        "B.S. Architecture, Bicol University",
-                        "PRC License No. 0099654, Registered Architect",
-                        "Safety Officer 2 (SO2)",
-                        "9 years of experience",
-                        "Expertise: Architectural Design, Design Management, Project Coordination"
-                    ],
-                    "experience": [],
-                    "currentRole": "Lead Architect / Design Manager: Directs architectural and design coordination services.",
                     "children": [
                         {
-                            "name": "Architectural Design",
-                            "role": "Sub-department",
-                            "rank": "Engineering Branch",
-                            "type": "department",
+                            "name": "SN, Toledo",
+                            "role": "Design Manager",
+                            "rank": "Architectural Design",
+                            "type": "person",
+                            "image": "assets/png/personnel/toledo.png",
+                            "bio": "Leads the architectural design and planning of the company's projects. Coordinates with engineering and construction teams to ensure functional, economical, and sustainable implementation while upholding quality and integrity standards.",
+                            "credentials": [
+                                "Profession: Architect",
+                                "B.S. Architecture, Bicol University",
+                                "PRC License No. 0099654 (Registered Architect)",
+                                "PRC License No. 0097421 (Registered Master Plumber)",
+                                "Safety Qualification: Safety Officer 2 (SO2)",
+                                "9 years of experience",
+                                "Area of Expertise: Architectural Design, Design Management, Project Coordination"
+                            ],
+                            "experience": [
+                                "Architectural Designer — GPAD Studio, Naga City: Prepared architectural plans, technical drawings, design presentations, and construction documentation for various building projects. Assisted in developing functional design solutions while coordinating with engineering considerations.",
+                                "Project Architect / Design Coordinator — BRIOARC Design Studio, Manila: Managed architectural planning and design coordination for residential, commercial, and building projects. Coordinated directly with clients, engineers, and contractors.",
+                                "Architect / Design Professional — Megawide Construction Corporation, QC: Handled architectural design development, construction drawings, documentation, and design presentations while ensuring alignment with project specs and standards."
+                            ],
+                            "currentRole": "Lead Architect / Design Manager — Salig Construction & Co.: Leads architectural design and planning, coordinating with engineering and construction teams to ensure designs are functional, economical, sustainable, and properly implemented.",
                             "children": [
                                 {
-                                    "name": "SN, Toledo",
-                                    "role": "Lead Architect",
-                                    "rank": "Architectural Design",
-                                    "type": "person",
-                                    "image": "assets/png/personnel/toledo.png",
-                                    "bio": "Leads architectural design, design management, and project coordination.",
-                                    "credentials": [
-                                        "Profession: Architect",
-                                        "B.S. Architecture, Bicol University",
-                                        "PRC License No. 0099654, Registered Architect",
-                                        "Safety Officer 2 (SO2)",
-                                        "9 years of experience",
-                                        "Expertise: Architectural Design, Design Management, Project Coordination"
-                                    ],
-                                    "experience": [],
-                                    "currentRole": "Lead Architect / Design Manager: Directs architectural and design coordination services.",
+                                    "name": "Architectural Design",
+                                    "role": "Sub-department",
+                                    "rank": "Engineering Branch",
+                                    "type": "department",
                                     "children": [
                                         {
-                                            "name": "IG, Maso",
-                                            "role": "Architect",
+                                            "name": "SN, Toledo",
+                                            "role": "Lead Archtitect",
                                             "rank": "Architectural Design",
                                             "type": "person",
-                                            "image": "assets/png/personnel/maso.png",
-                                            "bio": "Provides architectural design and planning support for construction and technical services.",
+                                            "image": "assets/png/personnel/toledo.png",
+                                            "bio": "Leads the architectural design and planning of the company's projects. Coordinates with engineering and construction teams to ensure functional, economical, and sustainable implementation while upholding quality and integrity standards.",
                                             "credentials": [
                                                 "Profession: Architect",
                                                 "B.S. Architecture, Bicol University",
-                                                "PRC License No. 0099654, Registered Architect",
+                                                "PRC License No. 0099654 (Registered Architect)",
+                                                "PRC License No. 0097421 (Registered Master Plumber)",
+                                                "Safety Qualification: Safety Officer 2 (SO2)",
                                                 "9 years of experience",
-                                                "Expertise: Architectural Design, Design Management, Project Coordination"
+                                                "Area of Expertise: Architectural Design, Design Management, Project Coordination"
                                             ],
-                                            "experience": [],
-                                            "currentRole": "Geotechnical Engineer: Supports geotechnical analysis, site planning, and technical coordination."
+                                            "experience": [
+                                                "Architectural Designer — GPAD Studio, Naga City: Prepared architectural plans, technical drawings, design presentations, and construction documentation for various building projects. Assisted in developing functional design solutions while coordinating with engineering considerations.",
+                                                "Project Architect / Design Coordinator — BRIOARC Design Studio, Manila: Managed architectural planning and design coordination for residential, commercial, and building projects. Coordinated directly with clients, engineers, and contractors.",
+                                                "Architect / Design Professional — Megawide Construction Corporation, QC: Handled architectural design development, construction drawings, documentation, and design presentations while ensuring alignment with project specs and standards."
+                                            ],
+                                            "currentRole": "Lead Architect / Design Manager — Salig Construction & Co.: Leads architectural design and planning, coordinating with engineering and construction teams to ensure designs are functional, economical, sustainable, and properly implemented."
                                         }
                                     ]
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Civil Engineering",
-                            "role": "Sub-department",
-                            "rank": "Engineering Branch",
-                            "type": "department",
-                            "children": [
+                                },
                                 {
-                                    "name": "W, Nelmida",
-                                    "role": "Lead Civil Engineer",
-                                    "rank": "Civil Engineering",
-                                    "type": "person",
-                                    "image": "assets/png/personnel/nelmida.png",
-                                    "bio": "Directs on-site construction activities and coordinates personnel, resources, quality, schedule, and safety.",
-                                    "credentials": [
-                                        "B.S. Civil Engineering, Bicol University",
-                                        "M.S. Civil Engineering, Structural Engineering, UP Diliman",
-                                        "Master in Project Management, Asian Institute of Management",
-                                        "Diploma in Construction Safety and Management, UP Open University",
-                                        "PRC License No. 0102458, Registered Civil Engineer",
-                                        "COSH, PMP, AutoCAD and Structural Design certifications",
-                                        "10 years of experience",
-                                        "Expertise: Construction Management, Site Supervision, Quality Control, Safety Management, Workforce Coordination"
-                                    ],
-                                    "experience": [
-                                        "Site Engineer: Supervised site activities, manpower, materials, and approved plans.",
-                                        "Project Engineer: Coordinated engineers, contractors, suppliers, workers, reports, and schedules.",
-                                        "Senior Site Supervisor: Managed site operations, subcontractors, construction quality, and safety procedures."
-                                    ],
-                                    "currentRole": "Construction Manager: Reports to the COO / Project Manager and executes projects per approved plans.",
+                                    "name": "Civil Engineering",
+                                    "role": "Sub-department",
+                                    "rank": "Engineering Branch",
+                                    "type": "department",
                                     "children": [
                                         {
-                                            "name": "Sanitary Engineering",
-                                            "role": "Specialization",
-                                            "rank": "Engineering Branch",
-                                            "type": "department",
+                                            "name": "W, Nelmida",
+                                            "role": "Lead Civil Engineer",
+                                            "rank": "Civil Engineering",
+                                            "type": "person",
+                                            "image": "assets/png/personnel/nelmida.png",
+                                            "bio": "Directs on-site construction activities and coordinates personnel, resources, quality, schedule, and safety.",
+                                            "credentials": [
+                                                "B.S. Civil Engineering, Bicol University",
+                                                "M.S. Civil Engineering, Structural Engineering, UP Diliman",
+                                                "Master in Project Management, Asian Institute of Management",
+                                                "Diploma in Construction Safety and Management, UP Open University",
+                                                "PRC License No. 0102458, Registered Civil Engineer",
+                                                "COSH, PMP, AutoCAD and Structural Design certifications",
+                                                "10 years of experience",
+                                                "Expertise: Construction Management, Site Supervision, Quality Control, Safety Management, Workforce Coordination"
+                                            ],
+                                            "experience": [
+                                                "Site Engineer: Supervised site activities, manpower, materials, and approved plans.",
+                                                "Project Engineer: Coordinated engineers, contractors, suppliers, workers, reports, and schedules.",
+                                                "Senior Site Supervisor: Managed site operations, subcontractors, construction quality, and safety procedures."
+                                            ],
+                                            "currentRole": "Construction Manager: Reports to the COO / Project Manager and executes projects per approved plans.",
                                             "children": [
                                                 {
-                                                    "name": "Barbacena",
-                                                    "role": "Sanitary Engineer",
-                                                    "rank": "Sanitary Engineering",
-                                                    "type": "person",
-                                                    "image": "assets/png/personnel/placeholder.png",
-                                                    "bio": "Oversees sanitary systems, water supply, drainage, sewerage, and wastewater management.",
-                                                    "credentials": [
-                                                        "B.S. Civil Engineering, Bicol University",
-                                                        "PRC License Nos. 0091060, 0098376, and 0095100",
-                                                        "Registered Civil Engineer, Sanitary Engineer, and Master Plumber",
-                                                        "8 years of experience",
-                                                        "Expertise: Sanitary Engineering, Water Supply, Wastewater, Drainage, Sewerage, Project Management"
-                                                    ],
-                                                    "experience": [
-                                                        "Project Engineer: Led planning, design, and implementation of civil engineering projects.",
-                                                        "Sanitary Engineer: Prepared sanitation studies, reviewed MEPF designs, and coordinated sanitary, plumbing, and fire protection works.",
-                                                        "Planning Engineer: Maintained project schedules, timelines, and resource plans."
-                                                    ],
-                                                    "currentRole": "Sanitary Engineer: Coordinates sanitary system design and implementation with architects, engineers, contractors, and site personnel."
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "name": "Plumbing Engineering",
-                                            "role": "Specialization",
-                                            "rank": "Engineering Branch",
-                                            "type": "department",
-                                            "children": [
+                                                    "name": "Geotechnical Engineering",
+                                                    "role": "Sub-department",
+                                                    "rank": "Engineering Branch",
+                                                    "type": "department",
+                                                    "children": [
+                                                        {
+                                                            "name": "Maso",
+                                                            "role": "Geotechnical Engineer",
+                                                            "rank": "Geotechnical Engineering",
+                                                            "type": "person",
+                                                            "image": "assets/png/personnel/maso.png",
+                                                            "bio": "Oversees geotechnical site activities, foundation assessments, earthworks monitoring, and environmental hazard evaluations.",
+                                                            "credentials": [
+                                                                "Profession: Geotechnical Engineer",
+                                                                "B.S. Civil Engineering, Bicol University",
+                                                                "PRC License No. 0090119 (Registered Civil Engineer)",
+                                                                "PRC License No. 0090913 (Registered Mining Engineer)",
+                                                                "PRC License No. 0091021 (Registered Master Plumber)",
+                                                                "PRC License No. 0090825 (Registered Environmental Planner)",
+                                                                "11 years of experience",
+                                                                "Area of Expertise: Foundation Engineering, Geotechnical Investigation, Site Characterization, Geohazard Mitigation, Environmental Remediation, Settlement Analysis"
+                                                            ],
+                                                            "experience": [
+                                                                "Project Development Officer I — DPWH Regional Office V: Assisted in planning, development, and evaluation of infrastructure projects, focusing on laboratory testing, material evaluation, quality control, and regulatory compliance.",
+                                                                "Engineer III — Mines and Geosciences Bureau Regional Office V: Conducted site visits and inspections of mining operations across the Bicol Region, evaluating safety, site conditions, and environmental/regulatory compliance.",
+                                                                "Field Engineer — Makati Development Corporation: Supervised construction site operations, conducted soil and foundation assessments, and monitored field execution for building and infrastructure projects."
+                                                            ],
+                                                            "currentRole": "Geotechnical Engineer — Salig Construction & Co.: Oversees geotechnical activities on site, conducts soil/foundation assessments, monitors excavation and earthworks, and ensures strict adherence to geotechnical specifications and safety standards."
+                                                        }
+                                                    ]
+                                                },
                                                 {
-                                                    "name": "JR, Aycocho",
-                                                    "role": "Plumbing Supervisor / Master Plumber",
-                                                    "rank": "Plumbing Supervisor",
-                                                    "type": "person",
-                                                    "image": "assets/png/personnel/aycocho.png",
-                                                    "bio": "Part of the Construction Management Team at Salig Construction & Co., bringing 10 years of civil engineering and construction experience.",
-                                                    "credentials": [
-                                                        "Profession: Civil Engineer / Registered Master Plumber",
-                                                        "B.S. Civil Engineering, Bicol University",
-                                                        "PRC License No. 0113942, Registered Civil Engineer",
-                                                        "PRC License No. 0087451, Registered Master Plumber",
-                                                        "Safety Training: Construction Occupational Safety and Health (COSH)",
-                                                        "Safety Officer 3 (SO3)",
-                                                        "10 years of experience",
-                                                        "Expertise: Construction Management, Plumbing Supervision, Plumbing Systems, Building Utilities, Site Supervision, Project Coordination"
-                                                    ],
-                                                    "experience": [
-                                                        "Civil Engineer, Department of Public Works and Highways (DPWH), 2016-2021: Assisted with infrastructure supervision, site inspections, progress monitoring, technical documents, and coordination with contractors and inspectors.",
-                                                        "Civil Engineer / Plumbing Supervisor, Salig Construction & Co., 2021-Present: Supervises plumbing installation, water supply, drainage, building utilities, site supervision, quality control, and coordination with architects and engineering disciplines."
-                                                    ],
-                                                    "currentRole": "Construction Management Team / Plumbing Supervisor / Civil Engineer / Master Plumber: Oversees plumbing and building utility works while assisting in site supervision, project coordination, quality control, and overall construction management."
+                                                    "name": "Sanitary Engineering",
+                                                    "role": "Specialization",
+                                                    "rank": "Engineering Branch",
+                                                    "type": "department",
+                                                    "children": [
+                                                        {
+                                                            "name": "Barbacena",
+                                                            "role": "Sanitary Engineer",
+                                                            "rank": "Sanitary Engineering",
+                                                            "type": "person",
+                                                            "image": "assets/png/personnel/placeholder.png",
+                                                            "bio": "Oversees sanitary systems, water supply, drainage, sewerage, and wastewater management.",
+                                                            "credentials": [
+                                                                "B.S. Civil Engineering, Bicol University",
+                                                                "PRC License Nos. 0091060, 0098376, and 0095100",
+                                                                "Registered Civil Engineer, Sanitary Engineer, and Master Plumber",
+                                                                "8 years of experience",
+                                                                "Expertise: Sanitary Engineering, Water Supply, Wastewater, Drainage, Sewerage, Project Management"
+                                                            ],
+                                                            "experience": [
+                                                                "Project Engineer: Led planning, design, and implementation of civil engineering projects.",
+                                                                "Sanitary Engineer: Prepared sanitation studies, reviewed MEPF designs, and coordinated sanitary, plumbing, and fire protection works.",
+                                                                "Planning Engineer: Maintained project schedules, timelines, and resource plans."
+                                                            ],
+                                                            "currentRole": "Sanitary Engineer: Coordinates sanitary system design and implementation with architects, engineers, contractors, and site personnel."
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "name": "Plumbing Engineering",
+                                                    "role": "Specialization",
+                                                    "rank": "Engineering Branch",
+                                                    "type": "department",
+                                                    "children": [
+                                                        {
+                                                            "name": "JR, Aycocho",
+                                                            "role": "Plumbing Engineer",
+                                                            "rank": "Plumbing Engineering",
+                                                            "type": "person",
+                                                            "image": "assets/png/personnel/aycocho.png",
+                                                            "bio": "Part of the Construction Management Team at Salig Construction & Co., bringing 10 years of civil engineering and construction experience.",
+                                                            "credentials": [
+                                                                "Profession: Civil Engineer / Registered Master Plumber",
+                                                                "B.S. Civil Engineering, Bicol University",
+                                                                "PRC License No. 0113942, Registered Civil Engineer",
+                                                                "PRC License No. 0087451, Registered Master Plumber",
+                                                                "Safety Training: Construction Occupational Safety and Health (COSH)",
+                                                                "Safety Officer 3 (SO3)",
+                                                                "10 years of experience",
+                                                                "Expertise: Construction Management, Plumbing Supervision and Engineering, Plumbing Systems, Building Utilities, Site Supervision, Project Coordination"
+                                                            ],
+                                                            "experience": [
+                                                                "Civil Engineer, Department of Public Works and Highways (DPWH), 2016-2021: Assisted with infrastructure supervision, site inspections, progress monitoring, technical documents, and coordination with contractors and inspectors.",
+                                                                "Civil Engineer / Plumbing Supervisor and Engineer, Salig Construction & Co., 2021-Present: Engineers plumbing systems, water supply, drainage, building utilities, site supervision, quality control, and coordination with architects and engineering disciplines."
+                                                            ],
+                                                            "currentRole": "Construction Management Team / Plumbing Engineer / Civil Engineer / Master Plumber: Oversees plumbing and building utility works while assisting in site supervision, project coordination, quality control, and overall construction management."
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
                                     ]
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Electrical Engineering",
-                            "role": "Sub-department",
-                            "rank": "Engineering Branch",
-                            "type": "department",
-                            "children": [
+                                },
                                 {
-                                    "name": "Camu",
-                                    "role": "Lead Electrical Engineer",
-                                    "rank": "Electrical Engineering",
-                                    "type": "person",
-                                    "image": "assets/png/personnel/placeholder.png",
-                                    "bio": "Leads electrical planning, design, installation, inspection, and project supervision.",
-                                    "credentials": [
-                                        "B.S. Electrical Engineering, Bicol University",
-                                        "PRC License No. 0125834, Registered Electrical Engineer",
-                                        "8 years of experience",
-                                        "Expertise: Electrical System Design, Installation, Maintenance, Project Supervision"
-                                    ],
-                                    "experience": [
-                                        "Electrical Engineer: Worked on electrical plans and installations for residential and commercial buildings.",
-                                        "Site Electrical Engineer: Supervised wiring, lighting, power distribution, and safety requirements.",
-                                        "Electrical Project Engineer: Planned, inspected, and monitored electrical works."
-                                    ],
-                                    "currentRole": "Lead Electrical Engineer: Leads electrical works from planning and design through installation and inspection."
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Mechanical Engineering",
-                            "role": "Sub-department",
-                            "rank": "Engineering Branch",
-                            "type": "department",
-                            "children": [
+                                    "name": "Electrical Engineering",
+                                    "role": "Sub-department",
+                                    "rank": "Engineering Branch",
+                                    "type": "department",
+                                    "children": [
+                                        {
+                                            "name": "Camu",
+                                            "role": "Lead Electrical Engineer",
+                                            "rank": "Electrical Engineering",
+                                            "type": "person",
+                                            "image": "assets/png/personnel/placeholder.png",
+                                            "bio": "Leads electrical planning, design, installation, inspection, and project supervision.",
+                                            "credentials": [
+                                                "B.S. Electrical Engineering, Bicol University",
+                                                "PRC License No. 0125834, Registered Electrical Engineer",
+                                                "8 years of experience",
+                                                "Expertise: Electrical System Design, Installation, Maintenance, Project Supervision"
+                                            ],
+                                            "experience": [
+                                                "Electrical Engineer: Worked on electrical plans and installations for residential and commercial buildings.",
+                                                "Site Electrical Engineer: Supervised wiring, lighting, power distribution, and safety requirements.",
+                                                "Electrical Project Engineer: Planned, inspected, and monitored electrical works."
+                                            ],
+                                            "currentRole": "Lead Electrical Engineer: Leads electrical works from planning and design through installation and inspection."
+                                        }
+                                    ]
+                                },
                                 {
-                                    "name": "Cimanes",
-                                    "role": "Lead Mechanical Engineer",
-                                    "rank": "Mechanical Engineering",
-                                    "type": "person",
-                                    "image": "assets/png/personnel/placeholder.png",
-                                    "bio": "Leads mechanical systems planning, design, installation, and maintenance management.",
-                                    "credentials": [
-                                        "B.S. Mechanical Engineering, Bicol University",
-                                        "PRC License No. 0086139, Registered Mechanical Engineer",
-                                        "9 years of experience",
-                                        "Expertise: Mechanical Systems Design, HVAC Systems, Equipment Installation, Maintenance Management"
-                                    ],
-                                    "experience": [
-                                        "Mechanical Engineer: Designed and reviewed systems and supported equipment selection and technical plans.",
-                                        "Senior Mechanical Engineer: Supervised installations, equipment performance, contractors, suppliers, quality, and safety."
-                                    ],
-                                    "currentRole": "Mechanical Engineer: Leads the mechanical engineering team and reviews mechanical works for project compliance."
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Geotechnical Engineering",
-                            "role": "Sub-department",
-                            "rank": "Engineering Branch",
-                            "type": "department",
-                            "children": [
-                                {
-                                    "name": "Maso",
-                                    "role": "Geotechnical Engineer",
-                                    "rank": "Geotechnical Engineering",
-                                    "type": "person",
-                                    "image": "assets/png/personnel/maso.png",
-                                    "bio": "Provides geotechnical and civil engineering support for construction and technical services.",
-                                    "credentials": [
-                                        "Profession: Civil Engineer / Geotechnical Engineer / Architect",
-                                        "Expertise: Geotechnical engineering and site development"
-                                    ],
-                                    "experience": [],
-                                    "currentRole": "Geotechnical Engineer: Supports geotechnical analysis, site planning, and technical coordination."
+                                    "name": "Mechanical Engineering",
+                                    "role": "Sub-department",
+                                    "rank": "Engineering Branch",
+                                    "type": "department",
+                                    "children": [
+                                        {
+                                            "name": "Cimanes",
+                                            "role": "Lead Mechanical Engineer",
+                                            "rank": "Mechanical Engineering",
+                                            "type": "person",
+                                            "image": "assets/png/personnel/placeholder.png",
+                                            "bio": "Leads mechanical systems planning, design, installation, and maintenance management.",
+                                            "credentials": [
+                                                "B.S. Mechanical Engineering, Bicol University",
+                                                "PRC License No. 0086139, Registered Mechanical Engineer",
+                                                "9 years of experience",
+                                                "Expertise: Mechanical Systems Design, HVAC Systems, Equipment Installation, Maintenance Management"
+                                            ],
+                                            "experience": [
+                                                "Mechanical Engineer: Designed and reviewed systems and supported equipment selection and technical plans.",
+                                                "Senior Mechanical Engineer: Supervised installations, equipment performance, contractors, suppliers, quality, and safety."
+                                            ],
+                                            "currentRole": "Mechanical Engineer: Leads the mechanical engineering team and reviews mechanical works for project compliance."
+                                        }
+                                    ]
                                 }
                             ]
                         }
                     ]
                 }
-            ]}]
-            }
+            ]
+        }
     ]
 }
