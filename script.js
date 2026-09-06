@@ -198,7 +198,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Include Person if both search and department match
           if (isPerson) {
-            return (matchesSearch && matchesDepartment) ? { ...node, children } : null;
+            return ((matchesSearch && matchesDepartment) || children.length > 0)
+              ? { ...node, children }
+              : null;
           }
 
           // Include Department if it has matching children OR the department itself matches search
