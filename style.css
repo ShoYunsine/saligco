@@ -358,6 +358,45 @@ body { line-height: 1.6; color: #333; background: #111; overflow-x: hidden;}
   flex-direction: column;
   align-items: flex-start;
 }
+.hero-scroll-cue {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  z-index: 1001;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.8rem 0.7rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(0.5rem);
+  transition: opacity 0.35s ease, transform 0.35s ease, color 0.2s ease, background 0.2s ease;
+}
+.video-hero-about.video-active .hero-scroll-cue {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.hero-scroll-cue:hover,
+.hero-scroll-cue:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+}
+.hero-scroll-cue i {
+  color: #fff;
+}
 .hero-updates {
   position: relative;
   align-self: center;
@@ -564,6 +603,10 @@ text-align: justify;
     justify-content: space-between;
     padding: 0.8rem 1rem;
   }
+
+  .hero-scroll-cue {
+    bottom: 1rem;
+  }
 }
 
 /* Buttons & Utilities */
@@ -580,6 +623,188 @@ text-align: justify;
 .bg-light { background: #f4f4f4; }
 .grid { display: grid; gap: 2rem; margin-top: 2rem; }
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+
+/* Personnel organizational chart */
+.people-section {
+  position: relative;
+  background: #151515;
+  color: #fff;
+}
+.people-intro {
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+.section-eyebrow,
+.person-role {
+  color: var(--brand-color-1);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.people-intro h2 { margin: 0.35rem 0 0.5rem; font-size: clamp(2rem, 4vw, 3.5rem); }
+.people-intro p { color: rgba(255, 255, 255, 0.68); }
+.people-filters {
+  display: flex;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  gap: 0.75rem;
+}
+.people-search,
+.people-department-filter { position: relative; display: flex; flex: 1; align-items: center; }
+.people-search i { position: absolute; left: 1rem; color: rgba(255, 255, 255, 0.5); pointer-events: none; }
+.people-search input,
+.people-department-filter select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  outline: none;
+  font: inherit;
+}
+.people-search input { padding-left: 2.6rem; }
+.people-search input::placeholder { color: rgba(255, 255, 255, 0.5); }
+.people-search input:focus,
+.people-department-filter select:focus { border-color: var(--brand-color-1); box-shadow: 0 0 0 2px rgba(243, 18, 29, 0.18); }
+.people-department-filter select { appearance: none; padding-right: 2.4rem; }
+.people-department-filter::after { content: "\f107"; position: absolute; right: 1rem; color: rgba(255, 255, 255, 0.65); font-family: "Font Awesome 6 Free"; font-weight: 900; pointer-events: none; }
+.people-department-filter option { color: #222; background: #fff; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.org-chart { margin: 0 auto; overflow-x: auto; padding: 0.5rem 1rem 8rem; }
+.org-node { position: relative; display: flex; flex-direction: column; align-items: center; min-width: max-content; }
+.org-node > .person-card,
+.org-node > .department-card { z-index: 1; }
+.org-children {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+.org-children::before {
+  content: "";
+  position: absolute;
+  top: -3.5rem;
+  left: 50%;
+  width: 1px;
+  height: 1.75rem;
+  background: rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+}
+.org-children > .org-node::before {
+  content: "";
+  position: absolute;
+  top: -1.75rem;
+  left: 50%;
+  width: 1px;
+  height: 1.75rem;
+  background: rgba(255, 255, 255, 0.45);
+  z-index: 0;
+  pointer-events: none;
+}
+.org-node > .person-card::before,
+.org-node > .person-card::after,
+.org-node > .department-card::before,
+.org-node > .department-card::after {
+  content: "";
+  position: absolute;
+  top: -1.75rem;
+  width: calc(50% + 1.25rem);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.45);
+  z-index: 0;
+  pointer-events: none;
+}
+.org-children > .org-node:not(:first-child) > .person-card::before,
+.org-children > .org-node:not(:first-child) > .department-card::before { right: 50%; }
+.org-children > .org-node:not(:last-child) > .person-card::after,
+.org-children > .org-node:not(:last-child) > .department-card::after { left: 50%; }
+.org-children > .org-node:first-child > .person-card::before,
+.org-children > .org-node:first-child > .department-card::before,
+.org-children > .org-node:last-child > .person-card::after,
+.org-children > .org-node:last-child > .department-card::after { display: none; }
+.org-leaf { padding-bottom: 0; }
+.department-card {
+  display: flex;
+  min-width: 190px;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(243, 18, 29, 0.12);
+  border: 1px solid rgba(243, 18, 29, 0.65);
+  border-radius: 8px;
+  text-align: center;
+}
+.department-card h3 { margin: 0.35rem 0 0.15rem; font-size: 1rem; line-height: 1.15; }
+.department-card > span:last-child { color: rgba(255, 255, 255, 0.6); font-size: 0.7rem; }
+.person-rank { display: block; color: var(--brand-color-1); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; line-height: 1.2; text-transform: uppercase; }
+.person-card {
+  position: relative;
+  max-width: 400px;
+min-width: 300px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  text-align: left;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+.person-card:hover,
+.person-card:focus-within {
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.13);
+  border-color: var(--brand-color-1);
+  transform: translateY(-4px);
+}
+.person-card-main { display: flex; align-items: center; gap: 1rem; }
+.person-image {
+  width: 78px;
+  height: 92px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(15%);
+}
+.person-summary { min-width: 0; }
+.person-summary h3 { margin: 0.25rem 0 0.55rem; font-size: 1.15rem; line-height: 1.1; }
+.person-department { display: block; margin: -0.15rem 0 0.55rem; color: rgba(255, 255, 255, 0.6); font-size: 0.68rem; line-height: 1.35; }
+.person-department i { margin-right: 0.25rem; color: var(--brand-color-1); }
+.person-hint { color: rgba(255, 255, 255, 0.52); font-size: 0.7rem; }
+.person-hint i { margin-left: 0.25rem; color: var(--brand-color-1); }
+.person-credentials {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  padding: 0.8rem;
+  background: rgba(20, 20, 20, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 5px;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  width: 500px;
+  pointer-events: none;
+  transform: translateY(0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.person-card:hover .person-credentials,
+.person-card:focus-within .person-credentials { opacity: 1; transform: translateY(100%); }
+.person-credentials p { margin-bottom: 0.6rem; color: rgba(255, 255, 255, 0.78); font-size: 0.78rem; line-height: 1.45; }
+.person-credentials ul { display: grid; gap: 0.3rem; padding: 0; list-style: none; color: #fff; font-size: 0.74rem; }
+.person-credentials li::before { content: "＋"; margin-right: 0.35rem; color: var(--brand-color-1); }
+.org-message { color: rgba(255, 255, 255, 0.7); }
+
+@media (max-width: 700px) {
+  .people-filters { flex-direction: column; }
+  .org-chart { justify-content: flex-start; padding-right: 0; padding-left: 0; }
+  .org-children { gap: 0.75rem; }
+  .person-card { width: 220px; }
+  .department-card { width: 165px; }
+}
 
 /* Cards & Gallery */
 .project-card {
@@ -1123,6 +1348,15 @@ text-align: justify;
 }
 
 @media (max-width: 600px) {
+  .org-leadership,
+  .org-team {
+    grid-template-columns: 1fr;
+  }
+
+  .people-intro {
+    margin-bottom: 2.5rem;
+  }
+
   .asymmetric-grid {
     grid-template-columns: 1fr; /* Single column stack on small mobile screens */
   }

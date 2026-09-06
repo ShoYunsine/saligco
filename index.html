@@ -100,6 +100,11 @@
                 </div>
             </aside>
             </div>
+
+            <a class="hero-scroll-cue" href="#about" aria-label="Keep scrolling to learn more">
+                <span>Keep scrolling</span>
+                <i class="fa-solid fa-computer-mouse" aria-hidden="true"></i>
+            </a>
         </section>
 
         <section id="about" class="section about-section">
@@ -208,6 +213,28 @@
         </section>
     </div>
 
+    <section id="people" class="section people-section">
+        <div class="people-intro">
+            <span class="section-eyebrow">The people behind the work</span>
+            <h2>Our Personnel</h2>
+            <p>Meet the team bringing experience, accountability, and care to every project.</p>
+        </div>
+        <div class="people-filters" aria-label="Personnel filters">
+            <label class="people-search">
+                <span class="sr-only">Search personnel</span>
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="peopleSearch" type="search" placeholder="Search personnel" autocomplete="off">
+            </label>
+            <label class="people-department-filter">
+                <span class="sr-only">Filter by department</span>
+                <select id="departmentFilter">
+                    <option value="all">All departments</option>
+                </select>
+            </label>
+        </div>
+        <div id="orgChart" class="org-chart" aria-live="polite"></div>
+    </section>
+
     <section id="services" class="section">
         <h2>Our Services</h2>
         <div class="grid grid-3">
@@ -278,9 +305,9 @@
                     <div class="footer-column">
                         <h4>People</h4>
                         <ul>
-                            <li><a href="#">People</a></li>
+                            <li><a href="#people">People</a></li>
                             <li><a href="#">Vision, Values &amp; Commitments</a></li>
-                            <li><a href="#">Leadership</a></li>
+                            <li><a href="#people">Leadership</a></li>
                             <li><a href="#">Salig.org</a></li>
                         </ul>
                     </div>

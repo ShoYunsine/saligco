@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (shouldShowVideo) {
         if (heroVideo.paused) {
-          heroVideo.play().catch(() => {});
+          heroVideo.play().catch(() => { });
         }
       } else {
         heroVideo.pause();
@@ -90,10 +90,143 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (heroVideo) {
     heroVideo.muted = true;
-    heroVideo.play().catch(() => {});
+    heroVideo.play().catch(() => { });
     heroVideo.addEventListener('loadeddata', () => {
-      heroVideo.play().catch(() => {});
+      heroVideo.play().catch(() => { });
     });
+  }
+
+  const orgChart = document.getElementById('orgChart');
+  if (orgChart) {
+    const peopleSearch = document.getElementById('peopleSearch');
+    const departmentFilter = document.getElementById('departmentFilter');
+    console.log('Fetching people.json for organizational chart...');
+    console.log('People Search Input:', peopleSearch);
+    console.log('Department Filter Select:', departmentFilter.value);
+    fetch('people.json')
+      .then(response => response.ok ? response.json() : Promise.reject())
+      .then(organization => {
+        const departmentNames = new Set();
+
+        const collectDepartments = (node, path = []) => {
+          const nextPath = node.type === 'department' ? [...path, node.name] : path;
+          if (node.type === 'department') departmentNames.add(nextPath.join(' / '));
+          (node.children || []).forEach(child => collectDepartments(child, nextPath));
+        };
+        collectDepartments(organization);
+        departmentNames.forEach(department => {
+          const option = document.createElement('option');
+          option.value = department;
+          option.textContent = department;
+          departmentFilter.appendChild(option);
+        });
+
+        const renderNode = (node, departmentPath = []) => {
+          const isPerson = node.type !== 'department';
+          const currentDepartmentPath = node.type === 'department' ? [...departmentPath, node.name] : departmentPath;
+          const nodeContent = isPerson ? `
+              <article class="person-card" tabindex="0">
+                <div class="person-card-main">
+                  <img class="person-image" src="${node.image}" alt="${node.name}">
+                  <div class="person-summary">
+                    <span class="person-rank">${node.rank}</span>
+                    <span class="person-role">${node.role}</span>
+                    <h3>${node.name}</h3>
+                    <span class="person-department"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> ${currentDepartmentPath.join(' / ') || 'Executive Management'}</span>
+                    <span class="person-hint">View credentials <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+                  </div>
+                </div>
+                <div class="person-credentials">
+                  <p>${node.bio}</p>
+                  <h4>Credentials</h4>
+                  <ul>${node.credentials.map(credential => `<li>${credential}</li>`).join('')}</ul>
+                  ${node.experience?.length ? `<h4>Professional Experience</h4><ul>${node.experience.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
+                  <h4>Current Role</h4>
+                  <p>${node.currentRole}</p>
+                </div>
+              </article>` : `
+              <div class="department-card">
+                <span class="person-rank">${node.rank}</span>
+                <h3>${node.name}</h3>
+                <span>${node.role}</span>
+              </div>`;
+
+          if (!node.children || node.children.length === 0) {
+            return `<div class="org-node org-leaf">${nodeContent}</div>`;
+          }
+
+          return `<div class="org-node">
+              ${nodeContent}
+              <div class="org-children">${node.children.map(child => renderNode(child, currentDepartmentPath)).join('')}</div>
+            </div>`;
+        };
+
+        const nodeText = node => {
+          const name = node.name || '';
+          const role = node.role || '';
+          const rank = node.rank || '';
+          const credentials = Array.isArray(node.credentials) ? node.credentials.join(' ') : '';
+          const bio = node.bio || '';
+          return `${name} ${role} ${rank} ${credentials} ${bio}`.toLowerCase();
+        };
+
+        const filterTree = (node, searchTerm, selectedDepartment, departmentPath = []) => {
+          if (!node) return null;
+
+          const currentDepartmentPath = node.type === 'department'
+            ? [...departmentPath, node.name]
+            : departmentPath;
+
+          const departmentPathText = currentDepartmentPath.join(' / ');
+
+          // Check Department Filter
+          const matchesDepartment = selectedDepartment === 'all'
+            || departmentPathText === selectedDepartment
+            || departmentPathText.startsWith(`${selectedDepartment} / `)
+            || selectedDepartment.startsWith(departmentPathText); // Allows root parent to pass through to matching children
+
+          // Process Children Recursively
+          const children = (node.children || [])
+            .map(child => filterTree(child, searchTerm, selectedDepartment, currentDepartmentPath))
+            .filter(Boolean);
+
+          const isPerson = node.type !== 'department';
+          const matchesSearch = !searchTerm || nodeText(node).includes(searchTerm);
+
+          // Return full tree if no search/filter is active
+          if (!searchTerm && selectedDepartment === 'all') return node;
+
+          // Include Person if both search and department match
+          if (isPerson) {
+            return (matchesSearch && matchesDepartment) ? { ...node, children } : null;
+          }
+
+          // Include Department if it has matching children OR the department itself matches search
+          if (children.length > 0 || (matchesSearch && matchesDepartment)) {
+            return { ...node, children };
+          }
+
+          return null;
+        };
+
+        const applyFilters = () => {
+          const searchTerm = peopleSearch.value.trim().toLowerCase();
+          console.log('Search Term:', searchTerm);
+          const selectedDepartment = departmentFilter.value;
+          const filteredOrganization = filterTree(organization, searchTerm, selectedDepartment);
+          console.log('Filtered Organization:', filteredOrganization);
+          orgChart.innerHTML = filteredOrganization
+            ? renderNode(filteredOrganization)
+            : '<p class="org-message">No personnel match your search.</p>';
+        };
+
+        peopleSearch.addEventListener('input', applyFilters);
+        departmentFilter.addEventListener('change', applyFilters);
+        applyFilters();
+      })
+      .catch(() => {
+        orgChart.innerHTML = '<p class="org-message">Personnel details are currently unavailable.</p>';
+      });
   }
 
   window.addEventListener('scroll', syncVideoState, { passive: true });
@@ -128,52 +261,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const updatePanel = document.querySelector('.hero-updates');
   if (updatePanel) {
-    const updates = [
-      { image: 'assets/png/1.png', alt: 'Construction site at sunset', kicker: 'Field notes / 01', title: 'Building the groundwork for what comes next.', description: 'A closer look at the people, places, and progress behind every Salig project.' },
-      { image: 'assets/png/6.png', alt: 'Salig construction project', kicker: 'Project watch / 02', title: 'Progress measured in strong foundations.', description: 'From first inspection to final handover, every detail moves the work forward.' },
-      { image: 'assets/png/1.png', alt: 'Construction site at sunset', kicker: 'Company journal / 03', title: 'Trust is the most important thing we build.', description: 'Meet the standards, conversations, and commitments that shape our way of working.' }
-    ];
     const image = updatePanel.querySelector('.update-image');
     const kicker = updatePanel.querySelector('.update-kicker');
     const title = updatePanel.querySelector('.update-title');
     const description = updatePanel.querySelector('.update-description');
     const current = updatePanel.querySelector('.update-current');
+    const total = updatePanel.querySelector('.update-total');
     const nextButton = updatePanel.querySelector('.update-arrow');
-    let updateIndex = 0;
-    let updateTimer;
-    const updateInterval = 6000;
+    const fallbackUpdates = [{
+      image: image.src,
+      alt: image.alt,
+      kicker: kicker.textContent,
+      title: title.textContent,
+      description: description.textContent
+    }];
 
-    function showUpdate(index) {
-      updateIndex = (index + updates.length) % updates.length;
-      const update = updates[updateIndex];
-      updatePanel.classList.add('is-changing');
-      window.setTimeout(() => {
-        image.src = update.image;
-        image.alt = update.alt;
-        kicker.textContent = update.kicker;
-        title.textContent = update.title;
-        description.textContent = update.description;
-        current.textContent = String(updateIndex + 1).padStart(2, '0');
-        updatePanel.classList.remove('is-changing');
-        updatePanel.classList.remove('is-running');
-        void updatePanel.offsetWidth;
-        updatePanel.classList.add('is-running');
-      }, 180);
-    }
+    fetch('updates.json')
+      .then(response => response.ok ? response.json() : Promise.reject())
+      .catch(() => fallbackUpdates)
+      .then(updates => {
+        if (!Array.isArray(updates) || updates.length === 0) return;
 
-    function startUpdates() {
-      window.clearInterval(updateTimer);
-      updatePanel.classList.add('is-running');
-      updateTimer = window.setInterval(() => showUpdate(updateIndex + 1), updateInterval);
-    }
+        let updateIndex = 0;
+        let updateTimer;
+        const updateInterval = 6000;
+        total.textContent = String(updates.length).padStart(2, '0');
 
-    nextButton.addEventListener('click', () => {
-      showUpdate(updateIndex + 1);
-      startUpdates();
-    });
-    updatePanel.addEventListener('mouseenter', () => window.clearInterval(updateTimer));
-    updatePanel.addEventListener('mouseleave', startUpdates);
-    startUpdates();
+        function showUpdate(index) {
+          updateIndex = (index + updates.length) % updates.length;
+          const update = updates[updateIndex];
+          updatePanel.classList.add('is-changing');
+          window.setTimeout(() => {
+            image.src = update.image;
+            image.alt = update.alt;
+            kicker.textContent = update.kicker;
+            title.textContent = update.title;
+            description.textContent = update.description;
+            current.textContent = String(updateIndex + 1).padStart(2, '0');
+            updatePanel.classList.remove('is-changing');
+            updatePanel.classList.remove('is-running');
+            void updatePanel.offsetWidth;
+            updatePanel.classList.add('is-running');
+          }, 180);
+        }
+
+        function startUpdates() {
+          window.clearInterval(updateTimer);
+          updatePanel.classList.add('is-running');
+          updateTimer = window.setInterval(() => showUpdate(updateIndex + 1), updateInterval);
+        }
+
+        nextButton.addEventListener('click', () => {
+          showUpdate(updateIndex + 1);
+          startUpdates();
+        });
+        updatePanel.addEventListener('mouseenter', () => window.clearInterval(updateTimer));
+        updatePanel.addEventListener('mouseleave', startUpdates);
+        startUpdates();
+      });
   }
 
   // Simple Project Gallery Filtering
@@ -204,15 +349,15 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Thank you! Your quote request has been submitted.');
     form.reset();
   });
-});document.addEventListener('DOMContentLoaded', () => {
+}); document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar');
   const heroSection = document.querySelector('.hero');
-  
+
   let lastScrollY = window.scrollY;
 
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
-    const heroHeight = heroSection ? heroSection.offsetHeight/2 : 300;
+    const heroHeight = heroSection ? heroSection.offsetHeight / 2 : 300;
 
     // Only enable auto-hide once scrolled past the top portion of the hero section
     if (currentScrollY > heroHeight) {
@@ -261,7 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeDot = dots[index];
 
     if (activeCard) activeCard.classList.add('auto-active');
-    
+
     if (activeDot) {
       activeDot.classList.add('active');
 
@@ -272,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Force reflow so the browser restarts the animation loop
         const fill = activeDot.querySelector('.progress-fill');
         if (fill) {
-          void fill.offsetWidth; 
+          void fill.offsetWidth;
         }
         activeDot.classList.add('running');
       }
