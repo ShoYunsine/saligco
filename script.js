@@ -211,6 +211,14 @@ document.addEventListener('DOMContentLoaded', () => {
           return null;
         };
 
+        const scrollToTopPerson = () => {
+          const topPerson = orgChart.querySelector(':scope > .org-node > .person-card');
+          if (!topPerson) return;
+
+          const targetScrollLeft = topPerson.offsetLeft - (orgChart.clientWidth - topPerson.offsetWidth) / 2;
+          orgChart.scrollLeft = Math.max(0, targetScrollLeft);
+        };
+
         const applyFilters = () => {
           const searchTerm = peopleSearch.value.trim().toLowerCase();
           console.log('Search Term:', searchTerm);
@@ -220,6 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
           orgChart.innerHTML = filteredOrganization
             ? renderNode(filteredOrganization)
             : '<p class="org-message">No personnel match your search.</p>';
+          scrollToTopPerson();
         };
 
         peopleSearch.addEventListener('input', applyFilters);

@@ -1,22 +1,28 @@
 {
     "name": "R, Rodriguez",
-    "role": "Chief Executive Officer (CEO)",
-    "rank": "Executive Management",
-    "type": "person",
-    "image": "assets/png/personnel/rodriguez.png",
-    "bio": "Civil Engineer providing overall leadership and strategic direction for Salig Construction & Co.",
-    "credentials": [
-        "B.S. Civil Engineering, Bicol University",
-        "PRC License No. 0095325, Registered Civil Engineer",
-        "15 years of experience",
-        "Expertise: Construction Management, Project Coordination, Business Development"
-    ],
-    "experience": [
-        "Chief Operating Officer: Oversaw day-to-day operations and coordinated technical, finance, and logistics departments.",
-        "Construction Project Manager: Managed schedules, manpower, materials, budgets, and technical teams.",
-        "Senior Project Engineer: Supported construction planning, site supervision, quality, and safety."
-    ],
-    "currentRole": "Chief Executive Officer: Oversees major business decisions, coordinates department heads, and ensures projects align with company standards and values.",
+   "role": "Chief Executive Officer",
+  "rank": "Executive Management",
+  "type": "person",
+  "image": "assets/png/personnel/rodriguez.png",
+  "bio": "Provides overall strategic leadership, executive decision-making, and department coordination to ensure company projects align with core values and business goals.",
+  "credentials": [
+    "Profession: Civil Engineer",
+    "B.S. Civil Engineering, Bicol University",
+    "Master of Business Administration (MBA), UP Diliman",
+    "M.S. Civil Engineering (Structural Engineering), UP Diliman",
+    "M.S. Construction Management, Mapúa University",
+    "PRC License No. 0095325 (Registered Civil Engineer)",
+    "PRC License No. 0095789 (Registered Master Plumber)",
+    "Safety Qualification: Safety Officer 2 (SO2)",
+    "15 years of experience",
+    "Area of Expertise: Construction Management, Project Coordination, Business Development"
+  ],
+  "experience": [
+    "Chief Operating Officer (COO): Oversaw daily operations and inter-departmental coordination across technical, finance, and logistics units to optimize operational efficiency.",
+    "Construction Project Manager: Directed construction schedules, labor, materials, and project budgets while maintaining client and contractor stakeholder alignment.",
+    "Senior Project Engineer: Supervised site operations, construction planning, and engineering workflows to enforce design compliance and safety standards."
+  ],
+  "currentRole": "Chief Executive Officer (CEO) — Salig Construction & Co.: Provides overall leadership and strategic vision, directs key corporate decisions, aligns department heads, and enforces corporate standards and goals.",
     "children": [
         {
             "name": "Administration & Finance",
@@ -56,7 +62,7 @@
             "type": "department",
             "children": [
                 {
-                    "name": "Azulis",
+                    "name": "Engr. JA, Azulis",
                     "role": "Chief Operating Officer (COO) / Project Manager",
                     "rank": "Operations Leadership",
                     "type": "person",
@@ -77,7 +83,7 @@
                     "currentRole": "Chief Operating Officer / Project Manager: Ensures projects uphold Salig's quality, integrity, and client trust from planning through completion.",
                     "children": [
                         {
-                            "name": "W, Nelmida",
+                            "name": "Engr. W, Nelmida",
                             "role": "Construction Manager",
                             "rank": "Civil Engineering",
                             "type": "person",
@@ -101,7 +107,7 @@
                             "currentRole": "Construction Manager: Reports to the COO / Project Manager and executes projects per approved plans.",
                             "children": [
                                 {
-                                    "name": "JR, Aycocho",
+                                    "name": "Engr. JR, Aycocho",
                                     "role": "Plumbing Supervisor",
                                     "rank": "Plumbing Supervisor / Master Plumber",
                                     "type": "person",
@@ -136,7 +142,7 @@
             "type": "department",
             "children": [
                 {
-                    "name": "Azulis",
+                    "name": "Engr. JA, Azulis",
                     "role": "Chief Operating Officer (COO) / Project Manager",
                     "rank": "Operations Leadership",
                     "type": "person",
@@ -157,7 +163,7 @@
                     "currentRole": "Chief Operating Officer / Project Manager: Ensures projects uphold Salig's quality, integrity, and client trust from planning through completion.",
                     "children": [
                         {
-                            "name": "SN, Toledo",
+                            "name": "Ar. SN, Toledo",
                             "role": "Design Manager",
                             "rank": "Architectural Design",
                             "type": "person",
@@ -186,7 +192,7 @@
                                     "type": "department",
                                     "children": [
                                         {
-                                            "name": "SN, Toledo",
+                                            "name": "Ar. SN, Toledo",
                                             "role": "Lead Archtitect",
                                             "rank": "Architectural Design",
                                             "type": "person",
@@ -217,7 +223,7 @@
                                     "type": "department",
                                     "children": [
                                         {
-                                            "name": "W, Nelmida",
+                                            "name": "Engr. W, Nelmida",
                                             "role": "Lead Civil Engineer",
                                             "rank": "Civil Engineering",
                                             "type": "person",
@@ -247,7 +253,7 @@
                                                     "type": "department",
                                                     "children": [
                                                         {
-                                                            "name": "Maso",
+                                                            "name": "Engr. IG, Maso",
                                                             "role": "Geotechnical Engineer",
                                                             "rank": "Geotechnical Engineering",
                                                             "type": "person",
@@ -279,7 +285,7 @@
                                                     "type": "department",
                                                     "children": [
                                                         {
-                                                            "name": "Barbacena",
+                                                            "name": "Engr. Barbacena",
                                                             "role": "Sanitary Engineer",
                                                             "rank": "Sanitary Engineering",
                                                             "type": "person",
@@ -308,7 +314,7 @@
                                                     "type": "department",
                                                     "children": [
                                                         {
-                                                            "name": "JR, Aycocho",
+                                                            "name": "Engr. JR, Aycocho",
                                                             "role": "Plumbing Engineer",
                                                             "rank": "Plumbing Engineering",
                                                             "type": "person",
@@ -343,7 +349,7 @@
                                     "type": "department",
                                     "children": [
                                         {
-                                            "name": "Camu",
+                                            "name": "Engr. JN, Camu",
                                             "role": "Lead Electrical Engineer",
                                             "rank": "Electrical Engineering",
                                             "type": "person",
@@ -371,7 +377,7 @@
                                     "type": "department",
                                     "children": [
                                         {
-                                            "name": "Cimanes",
+                                            "name": "Engr. Cimanes",
                                             "role": "Lead Mechanical Engineer",
                                             "rank": "Mechanical Engineering",
                                             "type": "person",
