@@ -66,7 +66,7 @@
                     "role": "Chief Operating Officer (COO) / Project Manager",
                     "rank": "Operations Leadership",
                     "type": "person",
-                    "image": "assets/png/personnel/placeholder.png",
+                    "image": "assets/png/personnel/azulis.png",
                     "bio": "Oversees daily operations and project execution across Salig's construction and design portfolio.",
                     "credentials": [
                         "Profession: Civil Engineer",
@@ -146,7 +146,7 @@
                     "role": "Chief Operating Officer (COO) / Project Manager",
                     "rank": "Operations Leadership",
                     "type": "person",
-                    "image": "assets/png/personnel/placeholder.png",
+                    "image": "assets/png/personnel/azulis.png",
                     "bio": "Oversees daily operations and project execution across Salig's construction and design portfolio.",
                     "credentials": [
                         "Profession: Civil Engineer",
@@ -289,7 +289,7 @@
                                                             "role": "Sanitary Engineer",
                                                             "rank": "Sanitary Engineering",
                                                             "type": "person",
-                                                            "image": "assets/png/personnel/placeholder.png",
+                                                            "image": "assets/png/personnel/barbacena.png",
                                                             "bio": "Oversees sanitary systems, water supply, drainage, sewerage, and wastewater management.",
                                                             "credentials": [
                                                                 "B.S. Civil Engineering, Bicol University",
@@ -303,8 +303,11 @@
                                                                 "Sanitary Engineer: Prepared sanitation studies, reviewed MEPF designs, and coordinated sanitary, plumbing, and fire protection works.",
                                                                 "Planning Engineer: Maintained project schedules, timelines, and resource plans."
                                                             ],
-                                                            "currentRole": "Sanitary Engineer: Coordinates sanitary system design and implementation with architects, engineers, contractors, and site personnel.",
-                                                            "children": [ {
+                                                            "currentRole": "Sanitary Engineer: Coordinates sanitary system design and implementation with architects, engineers, contractors, and site personnel."
+                                                           
+                                                }]
+                                                        },
+                                                        {
                                                     "name": "Master Plumbers",
                                                     "role": "Liscensed Master Plumbers",
                                                     "rank": "Engineering Branch",
@@ -334,9 +337,6 @@
                                                             "currentRole": "Construction Management Team / Plumbing Supervisor / Civil Engineer / Master Plumber: Oversees plumbing and building utility works while assisting in site supervision, project coordination, quality control, and overall construction management."
                                                         }
                                                     ]
-                                                }]
-                                                        }
-                                                    ]
                                                 }
                                                
                                             ]
@@ -354,7 +354,7 @@
                                             "role": "Lead Electrical Engineer",
                                             "rank": "Electrical Engineering",
                                             "type": "person",
-                                            "image": "assets/png/personnel/placeholder.png",
+                                            "image": "assets/png/personnel/camu.png",
                                             "bio": "Leads electrical planning, design, installation, inspection, and project supervision.",
                                             "credentials": [
                                                 "B.S. Electrical Engineering, Bicol University",
@@ -382,7 +382,7 @@
                                             "role": "Lead Mechanical Engineer",
                                             "rank": "Mechanical Engineering",
                                             "type": "person",
-                                            "image": "assets/png/personnel/placeholder.png",
+                                            "image": "assets/png/personnel/cimanes.png",
                                             "bio": "Leads mechanical systems planning, design, installation, and maintenance management.",
                                             "credentials": [
                                                 "B.S. Mechanical Engineering, Bicol University",
