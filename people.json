@@ -31,7 +31,7 @@
             "type": "department",
             "children": [
                 {
-  "name": "R, Arimado",
+  "name": "R, Arimado, CPA",
   "role": "Chief Financial Officer / Logistics & Budget Officer",
   "rank": "Administration & Finance",
   "type": "person",
@@ -163,7 +163,7 @@
                     "currentRole": "Chief Operating Officer / Project Manager: Ensures projects uphold Salig's quality, integrity, and client trust from planning through completion.",
                     "children": [
                         {
-                            "name": "Ar. SN, Toledo",
+                            "name": "Arch. SN, Toledo",
                             "role": "Design Manager",
                             "rank": "Architectural Design",
                             "type": "person",
@@ -192,7 +192,7 @@
                                     "type": "department",
                                     "children": [
                                         {
-                                            "name": "Ar. SN, Toledo",
+                                            "name": "Arch. SN, Toledo",
                                             "role": "Lead Archtitect",
                                             "rank": "Architectural Design",
                                             "type": "person",
@@ -285,7 +285,7 @@
                                                     "type": "department",
                                                     "children": [
                                                         {
-                                                            "name": "Engr. Barbacena",
+                                                            "name": "Engr. A, Barbacena",
                                                             "role": "Sanitary Engineer",
                                                             "rank": "Sanitary Engineering",
                                                             "type": "person",
@@ -377,7 +377,7 @@
                                     "type": "department",
                                     "children": [
                                         {
-                                            "name": "Engr. Cimanes",
+                                            "name": "Engr. D, Cimanes",
                                             "role": "Lead Mechanical Engineer",
                                             "rank": "Mechanical Engineering",
                                             "type": "person",
