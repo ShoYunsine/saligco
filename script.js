@@ -610,9 +610,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ctx.clearRect(0, 0, width, height);
 
-    const spacing = 28;
+    const spacing = 20;
     const maxRadius = Math.min(width, height) * 0.18;
-    const dotSpread = 70;
+    const dotSpread = 50;
 
     for (let row = -Math.ceil(height / spacing); row <= Math.ceil(height / spacing); row++) {
       for (let col = -Math.ceil(width / spacing); col <= Math.ceil(width / spacing); col++) {
@@ -625,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (distance > maxRadius + dotSpread) continue;
 
         const falloff = 1 - (distance / (maxRadius + dotSpread));
-        const dotSize = 2 + falloff * 5;
+        const dotSize = 1 + falloff * 5;
         const alpha = 0.12 + falloff * 0.9;
 
         ctx.beginPath();
@@ -636,7 +636,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const glow = ctx.createRadialGradient(focus.x, focus.y, 0, focus.x, focus.y, maxRadius);
-    glow.addColorStop(0, 'rgba(255,255,255,0.18)');
+    glow.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
     glow.addColorStop(0.5, 'rgba(255,255,255,0.06)');
     glow.addColorStop(1, 'rgba(255,255,255,0)');
     ctx.fillStyle = glow;
