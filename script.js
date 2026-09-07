@@ -335,7 +335,8 @@ function updateDuplicateLines() {
     const description = updatePanel.querySelector('.update-description');
     const current = updatePanel.querySelector('.update-current');
     const total = updatePanel.querySelector('.update-total');
-    const nextButton = updatePanel.querySelector('.update-arrow');
+    const previousButton = updatePanel.querySelector('.update-previous');
+    const nextButton = updatePanel.querySelector('.update-next');
     const fallbackUpdates = [{
       image: image.src,
       alt: image.alt,
@@ -381,6 +382,10 @@ function updateDuplicateLines() {
 
         nextButton.addEventListener('click', () => {
           showUpdate(updateIndex + 1);
+          startUpdates();
+        });
+        previousButton.addEventListener('click', () => {
+          showUpdate(updateIndex - 1);
           startUpdates();
         });
         updatePanel.addEventListener('mouseenter', () => window.clearInterval(updateTimer));
