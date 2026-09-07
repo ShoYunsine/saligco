@@ -123,11 +123,11 @@
                                         "10 years of experience",
                                         "Expertise: Construction Management, Plumbing Supervision and Engineering, Plumbing Systems, Building Utilities, Site Supervision, Project Coordination"
                                     ],
-                                    "experience": [
-                                        "Civil Engineer, Department of Public Works and Highways (DPWH), 2016-2021: Assisted with infrastructure supervision, site inspections, progress monitoring, technical documents, and coordination with contractors and inspectors.",
-                                        "Civil Engineer / Plumbing Supervisor and Engineer, Salig Construction & Co., 2021-Present: Engineers plumbing systems, water supply, drainage, building utilities, site supervision, quality control, and coordination with architects and engineering disciplines."
-                                    ],
-                                    "currentRole": "Construction Management Team / Plumbing Supervisor / Civil Engineer / Master Plumber: Oversees plumbing and building utility works while assisting in site supervision, project coordination, quality control, and overall construction management."
+                                   "experience": [
+                                                                "Civil Engineer, Department of Public Works and Highways (DPWH), 2016-2021: Assisted with infrastructure supervision, site inspections, progress monitoring, technical documents, and coordination with contractors and inspectors.",
+                                                                "Civil Engineer / Plumbing Supervisor / Master Plumber, Salig Construction & Co., 2021-Present: Engineers plumbing systems, water supply, drainage, building utilities, site supervision, quality control, and coordination with architects and engineering disciplines."
+                                                            ],
+                                                            "currentRole": "Construction Management Team / Plumbing Supervisor / Civil Engineer / Master Plumber: Oversees plumbing and building utility works while assisting in site supervision, project coordination, quality control, and overall construction management."
                                 }
                             ]
                         }
@@ -193,7 +193,7 @@
                                     "children": [
                                         {
                                             "name": "Arch. SN, Toledo",
-                                            "role": "Lead Archtitect",
+                                            "role": "Lead Archtitect (Concurrent)",
                                             "rank": "Architectural Design",
                                             "type": "person",
                                             "image": "assets/png/personnel/toledo.png",
@@ -224,7 +224,7 @@
                                     "children": [
                                         {
                                             "name": "Engr. W, Nelmida",
-                                            "role": "Lead Civil Engineer",
+                                            "role": "Lead Civil Engineer (Concurrent)",
                                             "rank": "Civil Engineering",
                                             "type": "person",
                                             "image": "assets/png/personnel/nelmida.png",
@@ -248,8 +248,8 @@
                                             "children": [
                                                 {
                                                     "name": "Geotechnical Engineering",
-                                                    "role": "Sub-department",
-                                                    "rank": "Engineering Branch",
+                                                    "role": "Specialization",
+                                                    "rank": "Civil Engineering Branch",
                                                     "type": "department",
                                                     "children": [
                                                         {
@@ -281,7 +281,7 @@
                                                 {
                                                     "name": "Sanitary Engineering",
                                                     "role": "Specialization",
-                                                    "rank": "Engineering Branch",
+                                                    "rank": "Civil Engineering Branch",
                                                     "type": "department",
                                                     "children": [
                                                         {
@@ -303,20 +303,17 @@
                                                                 "Sanitary Engineer: Prepared sanitation studies, reviewed MEPF designs, and coordinated sanitary, plumbing, and fire protection works.",
                                                                 "Planning Engineer: Maintained project schedules, timelines, and resource plans."
                                                             ],
-                                                            "currentRole": "Sanitary Engineer: Coordinates sanitary system design and implementation with architects, engineers, contractors, and site personnel."
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "name": "Plumbing Engineering",
-                                                    "role": "Specialization",
+                                                            "currentRole": "Sanitary Engineer: Coordinates sanitary system design and implementation with architects, engineers, contractors, and site personnel.",
+                                                            "children": [ {
+                                                    "name": "Master Plumbers",
+                                                    "role": "Liscensed Master Plumbers",
                                                     "rank": "Engineering Branch",
                                                     "type": "department",
                                                     "children": [
                                                         {
                                                             "name": "Engr. JR, Aycocho",
-                                                            "role": "Plumbing Engineer",
-                                                            "rank": "Plumbing Engineering",
+                                                            "role": "Master Plumber (Concurrent)",
+                                                            "rank": "Master Plumber",
                                                             "type": "person",
                                                             "image": "assets/png/personnel/aycocho.png",
                                                             "bio": "Part of the Construction Management Team at Salig Construction & Co., bringing 10 years of civil engineering and construction experience.",
@@ -332,12 +329,16 @@
                                                             ],
                                                             "experience": [
                                                                 "Civil Engineer, Department of Public Works and Highways (DPWH), 2016-2021: Assisted with infrastructure supervision, site inspections, progress monitoring, technical documents, and coordination with contractors and inspectors.",
-                                                                "Civil Engineer / Plumbing Supervisor and Engineer, Salig Construction & Co., 2021-Present: Engineers plumbing systems, water supply, drainage, building utilities, site supervision, quality control, and coordination with architects and engineering disciplines."
+                                                                "Civil Engineer / Plumbing Supervisor / Master Plumber, Salig Construction & Co., 2021-Present: Engineers plumbing systems, water supply, drainage, building utilities, site supervision, quality control, and coordination with architects and engineering disciplines."
                                                             ],
-                                                            "currentRole": "Construction Management Team / Plumbing Engineer / Civil Engineer / Master Plumber: Oversees plumbing and building utility works while assisting in site supervision, project coordination, quality control, and overall construction management."
+                                                            "currentRole": "Construction Management Team / Plumbing Supervisor / Civil Engineer / Master Plumber: Oversees plumbing and building utility works while assisting in site supervision, project coordination, quality control, and overall construction management."
+                                                        }
+                                                    ]
+                                                }]
                                                         }
                                                     ]
                                                 }
+                                               
                                             ]
                                         }
                                     ]

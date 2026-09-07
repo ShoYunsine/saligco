@@ -97,149 +97,206 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const orgChart = document.getElementById('orgChart');
-  if (orgChart) {
-    const peopleSearch = document.getElementById('peopleSearch');
-    const departmentFilter = document.getElementById('departmentFilter');
-    console.log('Fetching people.json for organizational chart...');
-    console.log('People Search Input:', peopleSearch);
-    console.log('Department Filter Select:', departmentFilter.value);
-    fetch('people.json')
-      .then(response => response.ok ? response.json() : Promise.reject())
-      .then(organization => {
-        const departmentNames = new Set();
+if (orgChart) {
+  const peopleSearch = document.getElementById('peopleSearch');
+  const departmentFilter = document.getElementById('departmentFilter');
 
-        const collectDepartments = (node, path = []) => {
-          const nextPath = node.type === 'department' ? [...path, node.name] : path;
-          if (node.type === 'department') departmentNames.add(nextPath.join(' / '));
-          (node.children || []).forEach(child => collectDepartments(child, nextPath));
-        };
-        collectDepartments(organization);
+  fetch('people.json')
+    .then(response => response.ok ? response.json() : Promise.reject())
+    .then(organization => {
+      const departmentNames = new Set();
+
+      const collectDepartments = (node, path = []) => {
+        if (!node) return;
+        const nextPath = node.type === 'department' ? [...path, node.name] : path;
+        if (node.type === 'department' && node.name) {
+          departmentNames.add(nextPath.join(' / '));
+        }
+        (node.children || []).forEach(child => collectDepartments(child, nextPath));
+      };
+      collectDepartments(organization);
+
+      // Populate department options safely
+      if (departmentFilter) {
         departmentNames.forEach(department => {
           const option = document.createElement('option');
           option.value = department;
           option.textContent = department;
           departmentFilter.appendChild(option);
         });
+      }
 
-        const renderNode = (node, departmentPath = []) => {
-          const isPerson = node.type !== 'department';
-          const currentDepartmentPath = node.type === 'department' ? [...departmentPath, node.name] : departmentPath;
-          const nodeContent = isPerson ? `
-              <article class="person-card" tabindex="0">
-                <div class="person-card-main">
-                  <img class="person-image" src="${node.image}" alt="${node.name}">
-                  <div class="person-summary">
-                    <span class="person-rank">${node.rank}</span>
-                    <span class="person-role">${node.role}</span>
-                    <h3>${node.name}</h3>
-                    <span class="person-department"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> ${currentDepartmentPath.join(' / ') || 'Executive Management'}</span>
-                    <span class="person-hint">View credentials <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
-                  </div>
+      // Helper for list rendering
+      const renderList = (items) => 
+        Array.isArray(items) && items.length 
+          ? `<ul>${items.map(item => `<li>${item}</li>`).join('')}</ul>` 
+          : '';
+
+      const renderNode = (node, departmentPath = []) => {
+        if (!node) return '';
+        const isPerson = node.type !== 'department';
+        const currentDepartmentPath = node.type === 'department' ? [...departmentPath, node.name] : departmentPath;
+
+        const nodeContent = isPerson ? `
+            <article class="person-card" tabindex="0">
+              <div class="person-card-main">
+                <img class="person-image" src="${node.image || 'assets/png/personnel/placeholder.png'}" alt="${node.name || 'Personnel'}">
+                <div class="person-summary">
+                  <span class="person-rank">${node.rank || ''}</span>
+                  <span class="person-role">${node.role || ''}</span>
+                  <h3>${node.name || ''}</h3>
+                  <span class="person-department">
+                    <i class="fa-solid fa-sitemap" aria-hidden="true"></i> 
+                    ${currentDepartmentPath.join(' / ') || 'Executive Management'}
+                  </span>
+                  <span class="person-hint">View credentials <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
                 </div>
-                <div class="person-credentials">
-                  <p>${node.bio}</p>
-                  <h4>Credentials</h4>
-                  <ul>${node.credentials.map(credential => `<li>${credential}</li>`).join('')}</ul>
-                  ${node.experience?.length ? `<h4>Professional Experience</h4><ul>${node.experience.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}
-                  <h4>Current Role</h4>
-                  <p>${node.currentRole}</p>
-                </div>
-              </article>` : `
-              <div class="department-card">
-                <span class="person-rank">${node.rank}</span>
-                <h3>${node.name}</h3>
-                <span>${node.role}</span>
-              </div>`;
-
-          if (!node.children || node.children.length === 0) {
-            return `<div class="org-node org-leaf">${nodeContent}</div>`;
-          }
-
-          return `<div class="org-node">
-              ${nodeContent}
-              <div class="org-children">${node.children.map(child => renderNode(child, currentDepartmentPath)).join('')}</div>
+              </div>
+              <div class="person-credentials">
+                ${node.bio ? `<p>${node.bio}</p>` : ''}
+                ${node.credentials?.length ? `<h4>Credentials</h4>${renderList(node.credentials)}` : ''}
+                ${node.experience?.length ? `<h4>Professional Experience</h4>${renderList(node.experience)}` : ''}
+                ${node.currentRole ? `<h4>Current Role</h4><p>${node.currentRole}</p>` : ''}
+              </div>
+            </article>` : `
+            <div class="department-card">
+              <span class="person-rank">${node.rank || ''}</span>
+              <h3>${node.name || ''}</h3>
+              <span>${node.role || ''}</span>
             </div>`;
-        };
 
-        const nodeText = node => {
-          const name = node.name || '';
-          const role = node.role || '';
-          const rank = node.rank || '';
-          const credentials = Array.isArray(node.credentials) ? node.credentials.join(' ') : '';
-          const bio = node.bio || '';
-          return `${name} ${role} ${rank} ${credentials} ${bio}`.toLowerCase();
-        };
+        if (!node.children || node.children.length === 0) {
+          return `<div class="org-node org-leaf">${nodeContent}</div>`;
+        }
 
-        const filterTree = (node, searchTerm, selectedDepartment, departmentPath = []) => {
-          if (!node) return null;
+        return `<div class="org-node">
+            ${nodeContent}
+            <div class="org-children">${node.children.map(child => renderNode(child, currentDepartmentPath)).join('')}</div>
+          </div>`;
+      };
 
-          const currentDepartmentPath = node.type === 'department'
-            ? [...departmentPath, node.name]
-            : departmentPath;
+      const nodeText = node => {
+        const name = node.name || '';
+        const role = node.role || '';
+        const rank = node.rank || '';
+        const credentials = Array.isArray(node.credentials) ? node.credentials.join(' ') : '';
+        const bio = node.bio || '';
+        return `${name} ${role} ${rank} ${credentials} ${bio}`.toLowerCase();
+      };
 
-          const departmentPathText = currentDepartmentPath.join(' / ');
+      const filterTree = (node, searchTerm, selectedDepartment, departmentPath = []) => {
+        if (!node) return null;
 
-          // Check Department Filter
-          const matchesDepartment = selectedDepartment === 'all'
-            || departmentPathText === selectedDepartment
-            || departmentPathText.startsWith(`${selectedDepartment} / `)
-            || selectedDepartment.startsWith(departmentPathText); // Allows root parent to pass through to matching children
+        const currentDepartmentPath = node.type === 'department'
+          ? [...departmentPath, node.name]
+          : departmentPath;
 
-          // Process Children Recursively
-          const children = (node.children || [])
-            .map(child => filterTree(child, searchTerm, selectedDepartment, currentDepartmentPath))
-            .filter(Boolean);
+        const departmentPathText = currentDepartmentPath.join(' / ');
 
-          const isPerson = node.type !== 'department';
-          const matchesSearch = !searchTerm || nodeText(node).includes(searchTerm);
+        const matchesDepartment = selectedDepartment === 'all'
+          || departmentPathText === selectedDepartment
+          || departmentPathText.startsWith(`${selectedDepartment} / `)
+          || selectedDepartment.startsWith(departmentPathText);
 
-          // Return full tree if no search/filter is active
-          if (!searchTerm && selectedDepartment === 'all') return node;
+        const children = (node.children || [])
+          .map(child => filterTree(child, searchTerm, selectedDepartment, currentDepartmentPath))
+          .filter(Boolean);
 
-          // Include Person if both search and department match
-          if (isPerson) {
-            return ((matchesSearch && matchesDepartment) || children.length > 0)
-              ? { ...node, children }
-              : null;
-          }
+        const isPerson = node.type !== 'department';
+        const matchesSearch = !searchTerm || nodeText(node).includes(searchTerm);
 
-          // Include Department if it has matching children OR the department itself matches search
-          if (children.length > 0 || (matchesSearch && matchesDepartment)) {
-            return { ...node, children };
-          }
+        if (!searchTerm && selectedDepartment === 'all') return node;
 
-          return null;
-        };
+        if (isPerson) {
+          return ((matchesSearch && matchesDepartment) || children.length > 0)
+            ? { ...node, children }
+            : null;
+        }
 
-        const scrollToTopPerson = () => {
-          const topPerson = orgChart.querySelector(':scope > .org-node > .person-card');
-          if (!topPerson) return;
+        if (children.length > 0 || (matchesSearch && matchesDepartment)) {
+          return { ...node, children };
+        }
 
-          const targetScrollLeft = topPerson.offsetLeft - (orgChart.clientWidth - topPerson.offsetWidth) / 2;
-          orgChart.scrollLeft = Math.max(0, targetScrollLeft);
-        };
+        return null;
+      };
 
-        const applyFilters = () => {
-          const searchTerm = peopleSearch.value.trim().toLowerCase();
-          console.log('Search Term:', searchTerm);
-          const selectedDepartment = departmentFilter.value;
-          const filteredOrganization = filterTree(organization, searchTerm, selectedDepartment);
-          console.log('Filtered Organization:', filteredOrganization);
-          orgChart.innerHTML = filteredOrganization
-            ? renderNode(filteredOrganization)
-            : '<p class="org-message">No personnel match your search.</p>';
-          scrollToTopPerson();
-        };
+      const scrollToTopPerson = () => {
+        const topPerson = orgChart.querySelector(':scope > .org-node > .person-card');
+        if (!topPerson) return;
 
-        peopleSearch.addEventListener('input', applyFilters);
-        departmentFilter.addEventListener('change', applyFilters);
-        applyFilters();
-      })
-      .catch(() => {
-        orgChart.innerHTML = '<p class="org-message">Personnel details are currently unavailable.</p>';
-      });
-  }
+        const targetScrollLeft = topPerson.offsetLeft - (orgChart.clientWidth - topPerson.offsetWidth) / 2;
+        orgChart.scrollLeft = Math.max(0, targetScrollLeft);
+      };
 
+      const applyFilters = () => {
+        const searchTerm = peopleSearch ? peopleSearch.value.trim().toLowerCase() : '';
+        const selectedDepartment = departmentFilter ? departmentFilter.value : 'all';
+        const filteredOrganization = filterTree(organization, searchTerm, selectedDepartment);
+
+        orgChart.innerHTML = filteredOrganization
+          ? renderNode(filteredOrganization)
+          : '<p class="org-message">No personnel match your search.</p>';
+        scrollToTopPerson();
+      };
+
+      if (peopleSearch) peopleSearch.addEventListener('input', applyFilters);
+      if (departmentFilter) departmentFilter.addEventListener('change', applyFilters);
+      applyFilters();
+    })
+    .catch((error) => {
+      console.error('Error loading people.json:', error);
+      orgChart.innerHTML = '<p class="org-message">Personnel details are currently unavailable.</p>';
+    });
+}
+function drawDottedConnectors(sourceEl, targetEl) {
+  const svg = document.getElementById('orgConnections');
+  if (!svg || !sourceEl || !targetEl) return;
+
+  const chartRect = orgChart.getBoundingClientRect();
+  const sourceRect = sourceEl.getBoundingClientRect();
+  const targetRect = targetEl.getBoundingClientRect();
+
+  // Calculate coordinates relative to the orgChart container
+  const x1 = sourceRect.left + sourceRect.width / 2 - chartRect.left + orgChart.scrollLeft;
+  const y1 = sourceRect.bottom - chartRect.top + orgChart.scrollTop;
+  const x2 = targetRect.left + targetRect.width / 2 - chartRect.left + orgChart.scrollLeft;
+  const y2 = targetRect.top - chartRect.top + orgChart.scrollTop;
+
+  // Create SVG path with curved bezier path & dotted stroke
+  const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  const deltaY = (y2 - y1) / 2;
+  const d = `M ${x1} ${y1} C ${x1} ${y1 + deltaY}, ${x2} ${y2 - deltaY}, ${x2} ${y2}`;
+
+  path.setAttribute('d', d);
+  path.setAttribute('stroke', '#007bff'); // Line color
+  path.setAttribute('stroke-width', '2');
+  path.setAttribute('stroke-dasharray', '6 4'); // Creates dotted pattern (6px line, 4px gap)
+  path.setAttribute('fill', 'none');
+
+  svg.appendChild(path);
+}
+
+// Call after rendering or filtering nodes:
+function updateDuplicateLines() {
+  const svg = document.getElementById('orgConnections');
+  if (svg) svg.innerHTML = ''; // Clear previous lines
+
+  // Example: Connect elements marked with duplicate data attributes (e.g., data-duplicate-id)
+  const duplicates = document.querySelectorAll('[data-duplicate-id]');
+  const groupMap = {};
+
+  duplicates.forEach(el => {
+    const id = el.getAttribute('data-duplicate-id');
+    if (!groupMap[id]) groupMap[id] = [];
+    groupMap[id].push(el);
+  });
+
+  Object.values(groupMap).forEach(nodes => {
+    for (let i = 0; i < nodes.length - 1; i++) {
+      drawDottedConnectors(nodes[i], nodes[i + 1]);
+    }
+  });
+}
   window.addEventListener('scroll', syncVideoState, { passive: true });
   window.addEventListener('resize', syncVideoState);
   syncVideoState();
